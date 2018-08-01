@@ -14,3 +14,7 @@
 .state-encours{
   color:rgb(0, 0, 189);
 }
+
+body .navbar-light .navbar-nav .nav-link.active {
+  color: rgb(76, 0, 255);
+}

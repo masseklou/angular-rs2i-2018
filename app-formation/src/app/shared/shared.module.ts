@@ -6,10 +6,13 @@ import { ItemComponent } from './components/item/item.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ToDeliverPipe } from './pipes/to-deliver.pipe';
 import { StateDirective } from './directives/state.directive';
+import { RouterModule } from '../../../node_modules/@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule, NgbModule
+    CommonModule,
+    NgbModule,
+    RouterModule
   ],
   declarations: [NavComponent, ItemComponent, CapitalizePipe, ToDeliverPipe, StateDirective],
   exports: [NavComponent, ItemComponent, ToDeliverPipe]

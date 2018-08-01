@@ -34,6 +34,10 @@ export class CollectionService {
    /**
    * add 1 item in collection
    */
+  public add(item: Item): void {
+    // update + catch pour les erreurs
+    this.collection.push(item);
+  }
 
    /**
    * update 1 item in collection
@@ -45,5 +49,8 @@ export class CollectionService {
    /**
    * delete 1 item in collection
    */
+  public delete(item: Item): void {
+    // update + catch pour les erreurs
+  }
 
 }

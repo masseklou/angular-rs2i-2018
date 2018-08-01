@@ -8,8 +8,6 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
-import { ItemsModule } from './items/items.module';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
@@ -29,8 +27,6 @@ import { Router } from '@angular/router';
     CoreModule,
     SharedModule,
     LoginModule,
-    HomeModule,
-    ItemsModule,
     NgbModule.forRoot(),
     AppRoutingModule,
     PageNotFoundModule

@@ -1,23 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './containers/home/home.component';
 
 const appRoutes: Routes = [
-  { path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  }
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({
   imports: [
     // forRoot : route principale de l'application
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false }
+    RouterModule.forChild(
+      appRoutes
     )
-  ],
-  exports: [
-    RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class HomeRoutingModule { }

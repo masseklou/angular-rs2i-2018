@@ -1,23 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './containers/login/login.component';
 
 const appRoutes: Routes = [
-  { path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  }
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
   imports: [
     // forRoot : route principale de l'application
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false }
+    RouterModule.forChild(
+      appRoutes
     )
-  ],
-  exports: [
-    RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class LoginRoutingModule { }

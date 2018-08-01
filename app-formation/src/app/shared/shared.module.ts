@@ -6,7 +6,7 @@ import { ItemComponent } from './components/item/item.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ToDeliverPipe } from './pipes/to-deliver.pipe';
 import { StateDirective } from './directives/state.directive';
-import { RouterModule } from '../../../node_modules/@angular/router';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [

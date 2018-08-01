@@ -17,7 +17,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
-import { Router } from '../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 
 @NgModule({
@@ -27,13 +27,13 @@ import { Router } from '../../node_modules/@angular/router';
   imports: [
     BrowserModule,
     CoreModule,
-    LoginModule,
-    PageNotFoundModule,
     SharedModule,
+    LoginModule,
     HomeModule,
     ItemsModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    PageNotFoundModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]

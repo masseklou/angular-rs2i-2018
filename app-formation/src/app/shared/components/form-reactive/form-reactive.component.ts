@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Item } from '../../interfaces/item';
 import { State } from '../../enums/state.enum';
+import { DateService } from '../../../core/services/date.service';
 
 @Component({
   selector: 'app-form-reactive',
@@ -16,6 +17,7 @@ export class FormReactiveComponent implements OnInit {
   @Output() nItem: EventEmitter<Item> = new EventEmitter();
   constructor(
     private fb: FormBuilder,
+    private dateService: DateService,
   ) { }
 
   ngOnInit() {
@@ -38,7 +40,8 @@ export class FormReactiveComponent implements OnInit {
   }
 
   public process() {
-    console.log(this.form.value);
+    this.form.get('deliveryDate').setValue(this.dateService.dateToIso(this.form.get('deliveryDate').value));
+    // console.log(this.form.value);
     this.nItem.emit(this.form.value);
     this.form.reset();
     this.form.get('state').setValue(State.ALIVRER);

@@ -6,7 +6,7 @@
     <span class="state-livree" *ngIf="state.LIVREE===item.state">{{ item.state }}</span>
   -->
     <span [appState]="item.state">{{ item.state }}</span>
-    <button class="btn btn-danger float-right" ><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+    <button class="btn btn-danger float-right" ><fa-icon [icon]="faTrashAlt" (click)="deleteItem()"></fa-icon></button>
     <button class="btn btn-info float-right" ><fa-icon [icon]="faPenSquare"></fa-icon></button>
   </div>
   <div class="card-body">

@@ -9,12 +9,14 @@ export class ToDeliverPipe implements PipeTransform {
   transform(value: any, args?: any): any {
 
     // console.log(value);
-    if (args) {
-      return value.filter(myItem => myItem.state === State.LIVREE);
-    }
+    if (value) {
+      if (args) {
+        return value.filter(myItem => myItem.state === State.LIVREE);
+      }
 
-    return value.filter(myItem => myItem.state !== State.LIVREE);
-    /*return value ? value.filter(myItem => myItem.state !== State.LIVREE) : [];*/
+      return value.filter(myItem => myItem.state !== State.LIVREE);
+      /*return value ? value.filter(myItem => myItem.state !== State.LIVREE) : [];*/
+    }
   }
 
 }

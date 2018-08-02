@@ -26,9 +26,20 @@ export class ItemComponent implements OnInit {
 
   public changeState(status: State): void {
     this.item.state = status;
-
     // update state using collectionService in database
+    this.collectionService.update(this.item);
+    // this.collectionService.update(item).subscribe((data) => {
+    //   if (data) {
+    //     data.state = item.state;
+    //   }
+    // });
+  }
+
+  public updateItem(): void {
     this.collectionService.update(this.item);
   }
 
+  public deleteItem(): void {
+    this.collectionService.delete(this.item);
+  }
 }

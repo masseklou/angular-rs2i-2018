@@ -1,5 +1,5 @@
-<div class="container" >
-    <ng-container *ngFor="let cmd of collection | toDeliver:'state.LIVREE'">
+<div class="container">
+    <ng-container *ngFor="let cmd of (collection | async) | toDeliver:'state.LIVREE'"> <!--toDeliver:'state.LIVREE'-->
       <app-item [item]="cmd"></app-item>
     </ng-container>
   </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CollectionService } from '../../../core/services/collection.service';
-import { Item } from '../../../shared/interfaces/item';
 import { State } from '../../../shared/enums/state.enum';
 import { AbstractComponent } from '../abstract/abstract.component';
 

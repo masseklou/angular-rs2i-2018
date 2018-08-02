@@ -18,7 +18,18 @@
     </div>
 
     <div class="form-group">
-        <input name="deliveryDate" [(ngModel)]="newItem.deliveryDate" type="date" class="form-control" placeholder="Delivery date">
+        <!-- <input name="deliveryDate" [(ngModel)]="newItem.deliveryDate" type="date" class="form-control" placeholder="Delivery date"> -->
+
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" (click)="d.toggle()"
+                   name="dp" [(ngModel)]="newItem.deliveryDate" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary"  type="button">
+                <img src="./assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+              </button>
+            </div>
+          </div>
+
       </div>
 
     <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>

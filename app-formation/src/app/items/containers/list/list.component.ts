@@ -12,10 +12,12 @@ export class ListComponent extends AbstractComponent implements OnInit {
   // public collection: Item[];
   constructor(collectionService: CollectionService) {
     super(collectionService);
+    super.ngOnInit();
   }
 
   ngOnInit() {
-    this.collection = this.collectionService.collection;
+    // console.log('test surcharge delivred');
+    // this.collection = this.collectionService.collection;
     /*console.log(this.collection);*/
   }
 

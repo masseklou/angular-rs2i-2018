@@ -2,11 +2,13 @@
   <form novalidate #form="ngForm" (ngSubmit)="process()">
 
     <div class="form-group">
-      <input name="name" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Enter full name" required minlength="5">
+      <input name="name" #nom="ngModel" [(ngModel)]="newItem.name" type="text" class="form-control" placeholder="Enter full name" required minlength="5">
+      <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">Champ invalide</div>
     </div>
 
     <div class="form-group">
-      <input name="reference" [(ngModel)]="newItem.reference" type="text" class="form-control" placeholder="Enter reférence" required minlength="4">
+      <input name="reference" #reference="ngModel" [(ngModel)]="newItem.reference" type="text" class="form-control" placeholder="Enter reférence" required minlength="4">
+      <div class="alert alert-danger" *ngIf="reference.invalid && reference.touched">Champ invalide</div>
     </div>
 
     <div class="form-group">

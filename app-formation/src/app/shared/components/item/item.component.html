@@ -7,7 +7,11 @@
   -->
     <span [appState]="item.state">{{ item.state }}</span>
     <button class="btn btn-danger float-right" ><fa-icon [icon]="faTrashAlt" (click)="deleteItem()"></fa-icon></button>
-    <button class="btn btn-info float-right" ><fa-icon [icon]="faPenSquare"></fa-icon></button>
+    <button class="btn btn-info float-right" >
+      <fa-icon [icon]="faPenSquare" [routerLink]="['/items/edit', item.id]" >
+      </fa-icon>
+    </button>
+    <!-- <button class="btn btn-info float-right" ><fa-icon [icon]="faPenSquare" ></fa-icon></button> -->
   </div>
   <div class="card-body">
     <h5 class="card-title">{{ item.name}}</h5>

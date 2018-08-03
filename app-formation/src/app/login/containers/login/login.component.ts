@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Identifiants } from '../../../shared/interfaces/identifiants';
+import { ConnectService } from '../../../core/services/connect.service';
+import { Observable } from '../../../../../node_modules/rxjs/internal/Observable';
+import { BehaviorSubject } from '../../../../../node_modules/rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  private identifiants: Observable<Identifiants[]>;
+  constructor(
+    private connectService: ConnectService
+  ) { }
 
   ngOnInit() {
+    // this.connectService.message.subscribe((data) => {
+    //   this.msg = data;
+    //   console.log('sub');
+    // });
+  }
+
+  public connect(identite: Identifiants): void {
+    console.log('ident = ' + identite.email, identite.password);
+
+    // this.connectService.checkIdentite(identite);
+    this.connectService.checkIdentite(identite);
+
+    // .subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
 }

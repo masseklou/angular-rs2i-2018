@@ -20,9 +20,20 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/items/add-reactive" routerLinkActive="active">Add-reactive</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!(connect | async); else lgout">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </li>
+      <ng-template #lgout>
+        <li class="nav-item" #lgout>
+          <span>{{ user.email }}> </span>
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ng-template>
+
+          <!-- <li class="nav-item">
+        <span>{{ user.name }}></span>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </li> -->
     </ul>
   </div>
 </nav>

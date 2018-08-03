@@ -15,6 +15,7 @@ import { ToDeliverPipe } from './pipes/to-deliver.pipe';
 import { StateDirective } from './directives/state.directive';
 import { RouterModule } from '@angular/router';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
+import { FormConnectComponent } from './components/form-connect/form-connect.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
     IconsModule,
     ReactiveFormsModule
   ],
-  declarations: [NavComponent, ItemComponent, CapitalizePipe, ToDeliverPipe, StateDirective, FormComponent, FormReactiveComponent],
-  exports: [NavComponent, ItemComponent, ToDeliverPipe, FormComponent, FormReactiveComponent]
+  // tslint:disable-next-line:max-line-length
+  declarations: [NavComponent, ItemComponent, CapitalizePipe, ToDeliverPipe, StateDirective, FormComponent, FormReactiveComponent, FormConnectComponent],
+  exports: [NavComponent, ItemComponent, ToDeliverPipe, FormComponent, FormReactiveComponent, FormConnectComponent]
 })
 export class SharedModule { }

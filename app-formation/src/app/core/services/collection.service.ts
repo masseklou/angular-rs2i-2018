@@ -5,7 +5,7 @@ import { Item } from '../../shared/interfaces/item';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { url } from 'inspector';
+// import { url } from 'inspector';
 
 
 @Injectable({
@@ -43,7 +43,10 @@ export class CollectionService {
    /**
    * get 1 item from collection
    */
-
+  getItem(id: string): Observable<Item> {
+    const item = this.afs.doc<Item>(`collection/${id}`).valueChanges();
+    return item;
+  }
 
    /**
    * add item in collection

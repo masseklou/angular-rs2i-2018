@@ -10,6 +10,7 @@ import { AddComponent } from './containers/add/add.component';
 import { DelivredComponent } from './containers/delivred/delivred.component';
 import { ListComponent } from './containers/list/list.component';
 import { AddReactiveComponent } from './containers/add-reactive/add-reactive.component';
+import { EditComponent } from './containers/edit/edit.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { AddReactiveComponent } from './containers/add-reactive/add-reactive.com
     SharedModule,
     ItemsRoutingModule
   ],
-  declarations: [ListComponent, DelivredComponent, AbstractComponent, AddComponent, AddReactiveComponent],
+  declarations: [ListComponent, DelivredComponent, AbstractComponent, AddComponent, AddReactiveComponent, EditComponent],
   exports: [ListComponent, DelivredComponent]
 })
 export class ItemsModule { }
